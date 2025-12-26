@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('head.ejs') %>
+<body>
+    
+      <div class="invisible score1" id="scor">
+        <div class="pointer" id="green"></div>
+        <div class="pointer" id="white"></div>
+        <div class="pointer" id="black"></div>
+        <div class="pointer" id="blue"></div>
+        <div class="pointer" id="red"></div>
+        <div class="pointer" id="orange"></div>
+      </div>
+      <div class="invisible score2" id="scorrr">
+        <h1 class="hed" id="Green">0</h1><br>
+        <h1 class="hed" id="White">0</h1><br>
+        <h1 class="hed" id="Black">0</h1><br>
+        <h1 class="hed" id="Blue">0</h1><br>
+        <h1 class="hed" id="Red">0</h1><br>
+        <h1 class="hed" id="Orange">0</h1>
+      </div>
+        <div class="invisible container " id="hexa">
+            <div class="line">
+                <button class="hexagon" id="blue">61</button>
+            </div>
+            <div class="line">
+                <button class="hexagon" onclick="Click(58)">59</button>
+                <button class="hexagon" onclick="Click(59)">60</button>
+            </div>
+            <div class="line">
+                <button class="hexagon" onclick="Click(55)">56</button>
+                <button class="hexagon" onclick="Click(56)">57</button>
+                <button class="hexagon" onclick="Click(57)">58</button>
+            </div>
+            <div class="line">
+                <button class="hexagon" onclick="Click(51)">52</button>
+                <button class="hexagon" onclick="Click(52)">53</button>
+                <button class="hexagon" onclick="Click(53)">54</button>
+                <button class="hexagon" onclick="Click(54)">55</button>
+            </div>
+            <div class="line">
+                <button class="hexagon" id="red">47</button>
+                <button class="hexagon" onclick="Click(47)">48</button>
+                <button class="hexagon" onclick="Click(48)">49</button>
+                <button class="hexagon" onclick="Click(49)">50</button>
+                <button class="hexagon" id="black">51</button>
+            </div>
+            <div class="line">
+                <button class="hexagon" onclick="Click(42)">43</button>
+                <button class="hexagon" onclick="Click(43)">44</button>
+                <button class="hexagon" onclick="Click(44)">45</button>
+                <button class="hexagon" onclick="Click(45)">46</button>
+            </div>
+            <div class="line">
+                <button class="hexagon" onclick="Click(37)">38</button>
+                <button class="hexagon" onclick="Click(38)">39</button>
+                <button class="hexagon" onclick="Click(39)">40</button>
+                <button class="hexagon" onclick="Click(40)">41</button>
+                <button class="hexagon" onclick="Click(41)">42</button>
+            </div>
+            <div class="line">
+                <button class="hexagon" onclick="Click(33)">34</button>
+                <button class="hexagon" onclick="Click(34)">35</button>
+                <button class="hexagon" onclick="Click(35)">36</button>
+                <button class="hexagon" onclick="Click(36)">37</button>
+            </div>
+            <div class="line">
+                <button class="hexagon" onclick="Click(28)">29</button>
+                <button class="hexagon" onclick="Click(29)">30</button>
+                <button class="hexagon" onclick="Click(30)">31</button>
+                <button class="hexagon" onclick="Click(31)">32</button>
+                <button class="hexagon" onclick="Click(32)">33</button>
+            </div>
+            <div class="line">
+                <button class="hexagon" onclick="Click(24)">25</button>
+                <button class="hexagon" onclick="Click(25)">26</button>
+                <button class="hexagon" onclick="Click(26)">27</button>
+                <button class="hexagon" onclick="Click(27)">28</button>
+            </div>
+            <div class="line">
+                <button class="hexagon" onclick="Click(19)">20</button>
+                <button class="hexagon" onclick="Click(20)">21</button>
+                <button class="hexagon" onclick="Click(21)">22</button>
+                <button class="hexagon" onclick="Click(22)">23</button>
+                <button class="hexagon" onclick="Click(23)">24</button>
+            </div>
+            <div class="line">
+                <button class="hexagon" onclick="Click(15)">16</button>
+                <button class="hexagon" onclick="Click(16)">17</button>
+                <button class="hexagon" onclick="Click(17)">18</button>
+                <button class="hexagon" onclick="Click(18)">19</button>
+            </div>
+            <div class="line">
+                <button class="hexagon" id="orange">11</button>
+                <button class="hexagon" onclick="Click(11)">12</button>
+                <button class="hexagon" onclick="Click(12)">13</button>
+                <button class="hexagon" onclick="Click(13)">14</button>
+                <button class="hexagon" id="white">15</button>
+            </div>
+            <div class="line">
+                <button class="hexagon" onclick="Click(6)">7</button>
+                <button class="hexagon" onclick="Click(7)">8</button>
+                <button class="hexagon" onclick="Click(8)">9</button>
+                <button class="hexagon" onclick="Click(9)">10</button>
+            </div>
+            <div class="line">
+                <button class="hexagon" onclick="Click(3)">4</button>
+                <button class="hexagon" onclick="Click(4)">5</button>
+                <button class="hexagon" onclick="Click(5)">6</button>
+            </div>
+            <div class="line">
+                <button class="hexagon" onclick="Click(1)">2</button>
+                <button class="hexagon" onclick="Click(2)">3</button>
+            </div>
+            <div class="line">
+                <button class="hexagon" id="green">1</button>
+            </div>
+            </div>  
+            <div class=" container" id="begin">
+                <button onclick="start(<%= JSON.stringify(Data) %>)" class="strt" id="start_button"></button>
+            </div>
+            <div class="invisible popup " id="pop">
+                <button class="controll invisible" id="wbutton" onclick="tookaW()"><img class="butt" src="img/vyhra.png" id="wbuttonn"></button>
+                <button class="controll invisible" id="xbutton" onclick="Close()"><img class="butt" src="img/zavriet.png" id="xbuttonn"></button>
+                <button class="controll invisible" id="lbutton" onclick="tookanL()"><img class="butt" src="img/prehra.png" id="lbuttonn"></button>
+                <h1 id="text" class="invisible">nic </h1>
+                <h1 id="instrukcie" class="invisible">nic </h1>
+                <img id="image" class="invisible h170" src="">
+                <h1 id="stats" class="invisible">stats</h1>
+
+
+                <div class="circle top-left">
+                    <h1 id="numero">1</h1>
+                </div>
+                <div class="circle top-right">
+                    <button onclick="Close()"><img src="img/Xbutton.png"></button>
+                </div>
+
+
+                <div class="choice invisible" id="scorr">
+                    <div class="booox">
+                        <button class="add" id="green" onclick="add(0)"></button>
+                        <button class="add" id="white"  onclick="add(1)"></button>
+                        <button class="add" id="black"  onclick="add(2)"></button>
+                    </div>
+                    <div class="booox">
+                        <button class="add" id="blue"  onclick="add(3)"></button>
+                        <button class="add" id="red"  onclick="add(4)"></button>
+                        <button class="add" id="orange"  onclick="add(5)"></button>
+                    </div>
+                </div>
+            </div>
+
+
+
+    <script src="/game.js"></script>
+
+</body>
+</html>

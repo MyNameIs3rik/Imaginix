@@ -1,0 +1,421 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="img/duch.png"> 
+    <title>Imaginix</title>
+    <style>
+@font-face {
+    font-family: Winter Storm;
+    src: url(Winter-Storm.ttf);
+}
+@font-face {
+    font-family: Reilova;
+    src: url(Reilova.ttf);
+}
+.hexagon {
+    font-family: Winter Storm;
+    width: 4.9vh; 
+    height: 4.2vh; 
+    background-color: #c2c2c2; 
+    position: static;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    margin-right: 1.5vh;
+    margin-left: 1.5vh;
+    border: 0px;
+    transition: transform 0.2s;
+    font-size: 1.7vh;
+    color: #010407;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+.hexagon:hover {
+    background-color: #cacaca; 
+    transition: 0.5s ease all;
+    transform: translateY(-5px) scale(1.05);
+    cursor: pointer;
+}
+
+.hexagon:active {
+    background-color: #b8b8b8; 
+    transition: 0.1s ease all;
+    transform: translateY(-3px) scale(0.95);
+}
+
+body {
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    background-image: url('img/BackGround.png');
+    background-repeat: repeat;
+    background-size: 50vh 50vh;
+}
+.line{
+    text-align: center;
+    width: 100%;
+    height: 4.2vh;
+    margin-top: -1.8vh;
+}
+.container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    height: 50vh;
+    min-width: 45vh;
+    padding: 0%;
+    margin: 0 auto; 
+    transform: translateY(100px);
+}
+.invisible {
+    display: none !important;
+}
+
+
+.strt {
+    font-family: Winter Storm;
+    border: 0px;
+    width: 40vh;
+    height:20vh;
+    background-image: url("img/starten.png");
+    background-size: cover;
+}
+
+
+.popup {
+    text-align: center;
+    align-items: center;
+    justify-content: center; 
+    left: 50%;
+    top: 39%;
+    transform: translate(-50%,-50%);
+    width: 33vh;
+    height: 43vh;
+    background-color: rgba(10, 12, 29, 0.75);
+    position: absolute;
+    border-radius: 4vh;
+    border: 1vh solid rgb(0, 13, 134);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 3);
+    padding: 3vh;
+}
+
+
+.controll {
+    background: none;
+    width:10vh;
+    border: none;
+    padding: 0;
+    margin: 2vh;
+    margin-top: -3vh;
+    margin-bottom: 0px;
+    transform: translate(-1.8vh,0);
+}
+.controll:hover{
+    transform: scale(1.05);
+    transform: translate(-1.8vh,0);
+}
+.controll:active{
+    transform: scale(0.95);
+    transform: translate(-1.8vh,0);
+}
+
+.butt {
+    width: 13vh; 
+    height: auto; 
+}
+
+.popup h1{
+    font-family: Winter Storm;
+    font-size: 1.8vh;
+    color: azure;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+#text {
+    font-size: 1.6vh;
+}
+
+button:hover{
+    transform: scale(1.05);
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+h1 {
+    font-family: Reilova;
+    font-size: 32px;
+    color: #dbd9d9;
+    margin-bottom: 20px;
+    text-shadow: 
+        -2px -2px 0 #000,  
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000;
+}
+
+
+.radio {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #7e7d7d;
+  border-radius: 50%;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+  vertical-align: middle;
+  position: relative; /* Add position relative */
+}
+
+
+.radio:before {
+  content: '';
+  display: inline-block;
+  width: 12px; /* Adjusted width */
+  height: 12px; /* Adjusted height */
+  background: transparent; /* Set background to transparent */
+  border-radius: 50%;
+  position: absolute; /* Add position absolute */
+  top: 50%; /* Position in the middle vertically */
+  left: 50%; /* Position in the middle horizontally */
+  transform: translate(-50%, -50%); /* Center the dot */
+}
+
+
+
+.radio:checked:before {
+  background: #b9b9b9;
+}
+
+.submit {
+  font-family: Reilova;
+  font-size: 26px;
+  padding: 20px 40px;
+  background-color: #b83cff;
+  color: rgb(3, 3, 3);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s transform 0.3s;
+}
+
+
+
+.submit:hover {
+  background-color: #bc4efc;
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
+
+.submit:active {
+  background-color: #b12aff;
+  transform: scale(0.95);
+  transition: transform 0.2s;
+}
+
+.label {
+  font-family: Winter Storm;
+  font-size: 25px;
+  color: #dbd9d9;
+  display: inline-block; /* Display labels inline */
+  vertical-align: middle; /* Align labels vertically */
+  margin-left: 10px; /* Add margin to separate labels from radio buttons */
+  text-shadow: 
+        -2px -2px 0 #000,  
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000;
+}
+
+.radio-group {
+  display: flex;
+  align-items: center;
+}
+
+
+#green {
+    background-color: #88ff58;
+}
+#red {
+    background-color: #d12a2a;
+}
+#blue {
+    background-color: #3676ff;
+}
+#black {
+    background-color: #444444;
+}
+#orange {
+    background-color: #ffa53f;
+}
+#white {
+    background-color: #ffffff;
+}
+
+.score1 {
+    position: fixed;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    max-width: 500px; /* Adjust the maximum width as needed */
+    padding: 10px;
+    padding-top:50px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 14px; /* Decrease the font size */
+}
+
+.score2 {
+    position: fixed;
+    bottom: 6vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    max-width: 460px; /* Adjust the maximum width as needed */
+    padding: 10px;
+    border-radius: 10px;
+
+    font-size: 28px; /* Decrease the font size */
+}
+
+.hed {
+    font-size: 22px;
+    margin: 0; /* Remove any margin */
+    padding: 0 15px; /* Add padding to reduce space */
+    text-shadow: none;
+}
+
+.pointer {
+    width: 20px; /* Decrease the width */
+    height: 20px; /* Decrease the height */
+    border-radius: 50%;
+    margin: 5px;
+}
+.choice {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Change to column to stack buttons vertically */
+    align-items: center; /* Center the buttons horizontally */
+    margin: 4vh;
+    bottom: 2vh !important;
+    height: 5vh;
+}
+
+.booox {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally within the row */
+}
+
+.add {
+    display: inline-block;
+    margin: 1vh !important;
+    height: 3vh !important; /* Decrease the height */
+    width: 3vh !important; /* Decrease the width to maintain a circular shape */
+    border-radius: 50%;
+    border: solid black 2px !important;
+}
+.h170{
+    height:24vh;
+}
+.h140{
+    height:12vh;
+}
+
+.language-switch {
+      position: fixed;
+      top: 1vh;
+      left: 50%;
+      padding: 5px 10px;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
+      transform: translateX(-50%);
+    }
+    .language-switch label {
+        font-size: 2vh;
+      margin-right: 0.3vh;
+      color: #ffffff;
+      font-weight: bold;
+      text-shadow: 
+        -2px -2px 0 #000,  
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000;
+    }
+    .language-switch .selected {
+        font-size: 1.9vh;
+        margin-right: 1.5vh;
+        color: #ce00f7;
+    }
+    .language-switch .selected:hover {
+      color: #a100c2;
+    }
+    .language-switch a {
+        font-size: 1.9vh;
+        text-decoration: none;
+        color: #27f1ff;
+        font-weight: bold;
+    }
+    .language-switch a:hover {
+      color: #00b7ff;
+    }
+
+    .circle {
+    width: 7.5vh;
+    height: 7.5vh;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.4); /* Change this to a desired color */
+    border: 0.5vh solid rgb(4, 0, 255); /* Add a red border */
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-left {
+    top: -4vh;
+    left: -3vh;
+}
+
+.top-right {
+    top: -4vh;
+    right: -3vh;
+}
+
+#numero{
+    font-size: 3.5vh;
+}
+.circle img{
+    width: 4vh;
+    height: 4vh;
+}
+.circle button{
+    width: 7.5vh;
+    height: 7.5vh;
+    border-radius: 50%;
+    background: none;
+    border: none;
+}
+
+
+    </style>
+</head>

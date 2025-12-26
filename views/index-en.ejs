@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('head.ejs') %>
+<body>
+    <div class="language-switch">
+        <label>Language: </label>
+        <a href="/en" class="selected">EN</a>
+        <a href="/">SK</a>
+      </div>
+
+  <div class="container" id="con">
+    <h1>Generate your own game</h1>
+    <form action="/new_game" method="POST">
+          <!-- <div class="radio-group">
+            <input class="radio" type="radio" id="Staroveké Grécko" name="tema" value="Staroveké Grécko" />
+            <label class="label">Staroveké Grécko</label>
+          </div> -->
+          <div class="radio-group">
+            <input class="radio" type="radio" id="Videohra" name="tema" value="videohra" checked/>
+            <label class="label">Videogame</label>
+          </div>
+          <div class="radio-group">
+            <input class="radio" type="radio" id="Vikingovia" name="tema" value="viking"/>
+            <label class="label">Vikings</label>
+          </div>
+           <div class="radio-group">
+            <input class="radio" type="radio" id="pirati" name="tema" value="pirati" />
+            <label class="label">Pirates</label>
+          </div> 
+          <div class="radio-group">
+            <input class="radio" type="radio" id="mimozemstania" name="tema" value="mimozem"  />
+            <label class="label">Aliens</label>
+          </div>
+        
+          <input type="hidden" name="lang" value="en">
+          
+        <br>
+
+        <input class="submit" type="submit" value="Generate game">
+    </form>
+  </div>
+  <div class="container invisible" id="can"><img src="img/Loading.gif"></div>
+  <script src="/game.js"></script>
+</body>
+</html>
