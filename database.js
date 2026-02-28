@@ -1,7 +1,7 @@
 const { MongoClient } = require('mongodb');
 const fs = require('fs');
 
-const uri = "mongodb+srv://erikkocurek:Q7OfxR9TKqNTLQ9P@imaginix.3kjmvlq.mongodb.net/?retryWrites=true&w=majority&appName=Imaginix";
+const uri = "link";
 const client = new MongoClient(uri);
 
 let list = [];
@@ -12,12 +12,9 @@ fs.readFile('csv_files/sk/piratix.csv', 'utf-8', (err, data) => {
     return;
   }
 
-  // Split the data into lines
   const lines = data.trim().split('\n');
 
-  // Iterate over each line
   for (const line of lines) {
-    // Split the line into an array of values
     const values = line.split(';');
 
     if (values.length >= 8) {
@@ -44,10 +41,8 @@ async function main() {
   const db = client.db("Databazy");
   const collection = db.collection("pirati");
 
-  // Delete all existing documents in the collection
   await collection.deleteMany({});
 
-  // Insert new documents
   let result = await collection.insertMany(list);
   console.log(result);
 
@@ -55,3 +50,4 @@ async function main() {
 }
 
 main().catch(console.error);
+
