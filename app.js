@@ -2,18 +2,16 @@ const express = require("express");
 const app = express();
 
 const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://Artigo:ArtigoLogin69420@imaginix.3kjmvlq.mongodb.net/?retryWrites=true&w=majority&appName=Imaginix";
+const uri = "link";
 const client = new MongoClient(uri)
 
 app.listen(3000);
 
 
-// Set up the view engine and middleware
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-// Define routes
 app.get("/", (req, res) => {
     res.render("index");
 });
@@ -70,4 +68,5 @@ async function read(client, theme, database) {
     const filteredResults = results.map(arr => arr.filter(item => item !== ''));
     return filteredResults;
 }
+
 
